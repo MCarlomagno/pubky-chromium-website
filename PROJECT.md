@@ -3,10 +3,12 @@
 Repository: https://github.com/MCarlomagno/pubky-chromium-website
 Browser source: https://github.com/MCarlomagno/pubky-chromium
 
-This repository is for the experimental Linux x86_64 download page. Use plain HTML/CSS and local Pubky artwork. The distributable browser package belongs in a prerelease of the browser-source repository, not in this repository. Until a tested package, version, SHA-256 and install instructions are available, the page must say that no build is available.
+This repository contains the experimental Pubky Chromium download page. The current package targets macOS on Apple Silicon, extending the original Linux draft at the owner's request. Use plain HTML/CSS and local Pubky artwork. Keep distributable packages in browser-repository prereleases; do not commit binaries here.
 
-Exclude the catalog, key gateway, DNS, login, trackers, backend, updater, paid hosting, and claims of Google endorsement or automatic security updates. Only genuine browser screenshots may be shown as screenshots. Preserve source and artwork attribution.
+A download must name its browser version, exact source revision, architecture, minimum deployment target, macOS version actually tested, package SHA-256, and signing/notarization status. Validate the unpacked package and fetch the published asset to verify its digest before enabling a link. Disclose untested platforms and first-launch requirements. Preserve normal sandbox, TLS and DNS protections and do not ask users to disable Gatekeeper globally. If no verified package exists, show a pending state without a download link.
 
-Run `python3 scripts/check_site.py` before review. Preview locally with `python3 -m http.server 8000 --bind 127.0.0.1 --directory docs`. Check desktop/mobile layout and keyboard focus in a real browser. Open a draft pull request from a feature branch; review and passing checks precede merge or production deployment. Do not self-approve.
+Keep scope to the download page. Exclude catalog, key gateway, DNS service, login, trackers, backend, updater, paid hosting, and claims of Google endorsement or automatic security updates. Only genuine browser screenshots may be shown as screenshots. Preserve source and artwork attribution.
 
-Hosting: GitHub Pages from the main branch's `/docs` folder, once independently reviewed. Do not publish a feature branch as the production Pages source. Roll back by reverting the bad commit on main and letting Pages publish the previous content; check the Pages build and fetched site afterward.
+Run `python3 scripts/check_site.py`, preview locally, and check desktop/mobile layout and keyboard focus in a real browser. Update the existing feature PR; independent review and passing checks precede merge or deployment. Do not self-approve or self-merge.
+
+Hosting is planned through GitHub Pages from `main` → `/docs`, after review. This PR does not configure Pages. Roll back a deployed change by reverting its commit on `main`, checking the Pages build and fetching the public page.

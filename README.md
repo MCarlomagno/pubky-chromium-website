@@ -1,9 +1,11 @@
-# Site release handoff
+# Pubky Chromium download page
 
-Public site files are in `docs/`. Run `python3 scripts/check_site.py`, then serve `docs/` locally to review it. The check intentionally asserts that no download is available yet; update that assertion when a reviewed package exists.
+The static site is in `docs/`. It links to the experimental Apple Silicon ZIP in the browser repository's [prerelease](https://github.com/MCarlomagno/pubky-chromium/releases/tag/macos-arm64-156.0.8073.0-d3d736b0), with version, source revision, SHA-256 and installation instructions. Browser binaries and license notices are distributed with that release, not in this repository.
 
-When a Linux x86_64 package has been installed and launched, update the static page with its verified version, browser-source revision, tested distribution/library/sandbox requirements, install and uninstall steps, SHA-256, and the exact GitHub prerelease asset URL from `MCarlomagno/pubky-chromium`. Fetch the published asset and verify its digest before enabling the download link. Do not commit binaries here. Add genuine browser screenshots only after checking that they contain no private windows or profile data.
+Run `python3 scripts/check_site.py`, then preview with `python3 -m http.server 8000 --bind 127.0.0.1 --directory docs`. Check desktop/mobile layout and keyboard focus in a real browser when changing the page.
 
-The Pubky wordmark at `docs/assets/pubky-logo.svg` was copied from https://pubky.org/images/pubky-logo.svg with permission for this browser project. Browser source and license notices remain in the browser repository.
+For each future release, validate the unpacked package on a Mac, record signing/notarization and minimum/tested macOS versions, publish the browser asset and checksum, then fetch the published asset and verify its digest before changing the download link. Update the page and the release contract in `scripts/check_site.py` together. Keep first-launch requirements and validation limits accurate; never ask users to disable Gatekeeper globally.
 
-Hosting is planned through GitHub Pages, publishing `main` → `/docs` after independent review and passing checks. No Pages source is configured for this draft. To roll back a bad release, revert the release commit on `main`, wait for the Pages build, and fetch the public URL to confirm the previous page. Do not push this feature branch as the Pages source.
+The Pubky wordmark at `docs/assets/pubky-logo.svg` was copied from https://pubky.org/images/pubky-logo.svg with permission for this browser project.
+
+GitHub Pages is planned from `main` → `/docs` after independent review and passing checks. This PR does not configure or deploy Pages. Do not use the feature branch as the production Pages source or self-merge. Once deployed, roll back a bad website release by reverting its commit on `main`, waiting for the Pages build, and fetching the public page to confirm the rollback.
