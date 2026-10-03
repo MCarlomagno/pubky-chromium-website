@@ -9,6 +9,6 @@ A download must name its browser version, exact source revision, architecture, m
 
 Keep scope to the download page. Exclude catalog, key gateway, DNS service, login, trackers, backend, updater, paid hosting, and claims of Google endorsement or automatic security updates. Only genuine browser screenshots may be shown as screenshots. Preserve source and artwork attribution.
 
-Run `python3 scripts/check_site.py`, preview locally, and check desktop/mobile layout and keyboard focus in a real browser. Update the existing feature PR; independent review and passing checks precede merge or deployment. Do not self-approve or self-merge.
+Run `python3 scripts/check_site.py`, the Pages assembly tests, and desktop/mobile layout and keyboard focus checks. Update the existing feature PR. The owner authorized automatic PR preview deployments; independent review and passing checks still precede merge. Do not self-approve or self-merge.
 
-Hosting is planned through GitHub Pages from `main` → `/docs`, after review. This PR does not configure Pages. Roll back a deployed change by reverting its commit on `main`, checking the Pages build and fetching the public page.
+GitHub Actions deploys `main`'s `/docs` as production and open same-repository PRs under `/pr-N/`. PR updates refresh previews; closing a PR removes it. Forks receive CI checks without deployment permissions. Keep production pinned to `main`, never to a feature branch. Read preview Git blobs as static data; do not run preview scripts in the publisher. Roll back production by reverting its commit on `main`, checking the Pages workflow and fetching the public page.
