@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Download experimental Pubky Chromium for Apple silicon. Public-key addresses in a familiar browser, with verified package details and installation instructions.">
+  <title>Pubky Chromium — macOS on Apple silicon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Pubky Chromium home"><img src="assets/pubky-logo.svg" alt="Pubky" width="121" height="40"><span class="brand-label">Chromium</span></a>
+      <a class="source" href="https://github.com/MCarlomagno/pubky-chromium">Browser source <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="heading">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Experimental browser · Apple silicon</p>
+        <h1 id="heading">A familiar browser.<br><em>Public-key addresses.</em></h1>
+        <p class="intro">Pubky Chromium adds public-key navigation and raw-public-key TLS to Chromium. Try the experimental Mac build from <a href="https://github.com/MCarlomagno/pubky-chromium">Marcos's Chromium fork</a>.</p>
+        <div class="availability">
+          <div>
+            <a class="download" href="https://github.com/MCarlomagno/pubky-chromium/releases/download/macos-arm64-156.0.8073.0-d3d736b0/pubky-chromium-156.0.8073.0-macos-arm64.zip">Download for Apple silicon <span aria-hidden="true">↓</span></a>
+            <p>Version 156.0.8073.0 · arm64 · ZIP, 230.4 MB</p>
+            <p>Ad-hoc signed. Not notarized by Apple. <a href="#install">Read the installation steps</a> before opening.</p>
+            <p><a href="https://github.com/MCarlomagno/pubky-chromium/releases/tag/macos-arm64-156.0.8073.0-d3d736b0">Release notes</a> · <a href="https://github.com/MCarlomagno/pubky-chromium/releases/download/macos-arm64-156.0.8073.0-d3d736b0/SHA256SUMS.txt">Checksum file</a></p>
+          </div>
+        </div>
+      </section>
+      <section class="details" aria-labelledby="details-heading">
+        <h2 id="details-heading">Before you install</h2>
+        <div class="grid">
+          <div><span class="number">01 / PLATFORM</span><h3>Mac with Apple silicon</h3><p>Built for macOS 13 or later. Tested on an M2 Pro with macOS 26.6.2; older macOS versions have not been tested. This package does not support Intel Macs.</p></div>
+          <div><span class="number">02 / VALIDATION</span><h3>Tested on a real Mac</h3><p>148 focused unit tests and four capability test fixtures passed. Native checks covered ordinary HTTPS, a live public-key homeserver, wrong-key rejection and Metal graphics with the sandbox enabled.</p></div>
+          <div><span class="number">03 / LIMITS</span><h3>For experimentation</h3><p>No automatic update channel. Keep your usual browser for daily use. Complete macOS first-launch prompts before browsing. Leaving the browser’s Safe Storage prompt pending can stall navigation and delay shutdown.</p></div>
+        </div>
+      </section>
+      <section class="details install" id="install" aria-labelledby="install-heading">
+        <h2 id="install-heading">Install a separate test copy</h2>
+        <ol>
+          <li><strong>Verify the download.</strong> Compare the ZIP's SHA-256 with the value below using <code>shasum -a 256 pubky-chromium-156.0.8073.0-macos-arm64.zip</code>.</li>
+          <li><strong>Expand the ZIP.</strong> Keep its license notices. Rename <code>Chromium.app</code> to <code>Pubky Chromium.app</code> and move it into your user's <code>Applications</code> folder. Create that folder if needed; this avoids replacing another Chromium installation.</li>
+          <li><strong>Open with a separate profile.</strong> Run the command below in Terminal. This keeps test browsing separate from an existing Chromium profile.</li>
+          <li><strong>Review macOS's warning.</strong> This app has an ad-hoc signature, sealed resources, and no Developer ID or Apple notarization. If you trust the verified package, use System Settings → Privacy &amp; Security → Open Anyway after the first opening attempt. macOS may require authentication. Follow <a href="https://support.apple.com/102445">Apple's instructions</a>; keep Gatekeeper enabled. Managed Macs may prohibit this exception.</li>
+        </ol>
+        <pre><code>open -n "$HOME/Applications/Pubky Chromium.app" --args --user-data-dir="$HOME/Library/Application Support/Pubky Chromium"</code></pre>
+        <p class="note">The native tests used local copies. A quarantined copy showed the expected macOS warning and Open Anyway option; completion of that exception was not verified. If macOS asks for Chromium to access its own “Chromium Safe Storage” item, complete that system prompt to initialize encrypted local storage. To uninstall, quit the app and move your test app to the Trash. The separate profile stays in your Library; remove it only if you also want to erase its browsing data.</p>
+        <dl class="metadata">
+          <div><dt>Source revision</dt><dd><a href="https://github.com/MCarlomagno/pubky-chromium/commit/d3d736b050b7fdd67010979ccbcab6cca76d63eb"><code>d3d736b050b7fdd67010979ccbcab6cca76d63eb</code></a></dd></div>
+          <div><dt>ZIP SHA-256</dt><dd><code id="sha256">24c273a61cb7b7771aca2464fd1379675a7074a9b278b240200726355d7811f4</code></dd></div>
+        </dl>
+      </section>
+    </main>
+    <footer><span>Pubky artwork used with permission. Independent experimental browser build; not endorsed by Google.</span><a href="https://github.com/MCarlomagno/pubky-chromium">View source <span aria-hidden="true">↗</span></a></footer>
+  </div>
+</body>
+</html>
