@@ -1,10 +1,10 @@
 # Pubky Chromium download page
 
-The static site is in `docs/`. It links to the experimental Apple Silicon ZIP in the browser repository's [prerelease](https://github.com/MCarlomagno/pubky-chromium/releases/tag/macos-arm64-156.0.8073.0-d3d736b0), with version, source revision, SHA-256 and installation instructions. Browser binaries and license notices are distributed with that release, not in this repository.
+The static site is in `docs/`. It links to the experimental macOS Apple Silicon ZIP and Ubuntu Linux x86_64 DEB in the browser repository's prereleases, with each build's source revision and SHA-256. Browser binaries and license notices are distributed from the browser repository, not committed here.
 
 Run `python3 scripts/check_site.py`, then preview with `python3 -m http.server 8000 --bind 127.0.0.1 --directory docs`. Check desktop/mobile layout and keyboard focus in a real browser when changing the page.
 
-For each future release, validate the unpacked package on a Mac, record signing/notarization and minimum/tested macOS versions, publish the browser asset and checksum, then fetch the published asset and verify its digest before changing the download link. Update the page and the release contract in `scripts/check_site.py` together. Keep first-launch requirements and validation limits accurate; never ask users to disable Gatekeeper globally.
+For each future release, validate the package, publish the browser asset and checksum, then fetch the published asset and verify its digest before changing the download link. Update the page and the release contract in `scripts/check_site.py` together.
 
 The Pubky wordmark at `docs/assets/pubky-logo.svg` was copied from https://pubky.org/images/pubky-logo.svg with permission for this browser project.
 
