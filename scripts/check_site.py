@@ -31,13 +31,13 @@ page = (ROOT / "index.html").read_text()
 references = References()
 references.feed(page)
 repo = "https://github.com/MCarlomagno/pubky-chromium"
-mac_tag = "macos-arm64-156.0.8073.0-d3d736b0"
-mac_asset = "pubky-chromium-156.0.8073.0-macos-arm64.zip"
+mac_tag = "macos-arm64-156.0.8073.0-7d5d1bfc"
+mac_asset = "pubky-chromium-156.0.8073.0-macos-arm64-7d5d1bfc.zip"
 linux_tag = "pubky-linux-156.0.8073.0-1"
 linux_asset = "chromium-browser-stable_156.0.8073.0-1_amd64.deb"
 assert f"{repo}/releases/download/{mac_tag}/{mac_asset}" in references.links
 assert f"{repo}/releases/download/{linux_tag}/{linux_asset}" in references.links
-assert f"{repo}/commit/d3d736b050b7fdd67010979ccbcab6cca76d63eb" in references.links
+assert f"{repo}/commit/7d5d1bfcacdd116fa4c361d4fd05b7a58b783a59" in references.links
 assert f"{repo}/commit/0188f19ccd9b50fb3b6dd85c099e26f93e0c6dab" in references.links
 assert re.search(r'<code id="mac-sha256">[a-f0-9]{64}</code>', page)
 assert re.search(r'<code id="linux-sha256">[a-f0-9]{64}</code>', page)
