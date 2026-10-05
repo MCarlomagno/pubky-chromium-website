@@ -1,6 +1,6 @@
 # Pubky Chromium download page
 
-The static site is in `docs/`. It links to the experimental macOS Apple Silicon ZIP and Ubuntu Linux x86_64 DEB in the browser repository's prereleases, with each build's source revision and SHA-256. Browser binaries and license notices are distributed from the browser repository, not committed here.
+The static site is in `docs/`. It links to the experimental macOS Apple Silicon ZIP, Ubuntu Linux x86_64 DEB and Windows x64 installer in the browser repository's prereleases, with each build's source revision and SHA-256. Browser binaries and license notices are distributed from the browser repository, not committed here.
 
 Run `python3 scripts/check_site.py`, then preview with `python3 -m http.server 8000 --bind 127.0.0.1 --directory docs`. Check desktop/mobile layout and keyboard focus in a real browser when changing the page.
 

@@ -3,7 +3,7 @@
 Repository: https://github.com/MCarlomagno/pubky-chromium-website
 Browser source: https://github.com/MCarlomagno/pubky-chromium
 
-This repository contains the Pubky Chromium download page for macOS on Apple Silicon and Ubuntu Linux x86_64. Use plain HTML/CSS and local artwork. Keep distributable packages in browser-repository prereleases; do not commit binaries here.
+This repository contains the Pubky Chromium download page for macOS on Apple Silicon, Ubuntu Linux x86_64 and Windows x64. Use plain HTML/CSS and local artwork. Keep distributable packages in browser-repository prereleases; do not commit binaries here.
 
 A download must use the exact published asset URL and show its exact source revision and SHA-256. Validate the package and fetch the published asset to verify its digest before enabling a link. Preserve normal sandbox, TLS and DNS protections. If no verified package exists, do not show a download link.
 
