@@ -18,12 +18,13 @@ a:focus-visible{outline:3px solid #bdff7f;outline-offset:5px;border-radius:3px}
 h1{font-size:clamp(48px,7.2vw,92px);line-height:1.07;letter-spacing:-.055em;font-weight:680;margin:28px 0}
 h1 em{font-style:normal;color:#b9eeaa}
 .intro{max-width:620px;color:#ced8cf;font-size:clamp(17px,2vw,20px);line-height:1.65}
-.availability{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:44px;padding:22px;max-width:720px;border:1px solid #65916b;border-radius:15px;background:#203429}
+.availability{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px;padding:22px;max-width:850px;border:1px solid #65916b;border-radius:15px;background:#203429}
 .platform-download{display:flex;align-items:center;gap:14px;min-width:0}
 .platform-logo{display:block;flex:0 0 auto;width:34px;height:34px;filter:invert(93%) sepia(15%) saturate(617%) hue-rotate(54deg) brightness(102%) contrast(94%)}
+.platform-mark{display:grid;place-items:center;flex:0 0 auto;width:34px;height:34px;border:2px solid #c6efb8;border-radius:4px;color:#c6efb8;font-size:11px;font-weight:800;letter-spacing:.02em}
 .download{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;flex:1;padding:13px 16px;background:#b9eeaa;color:#142319;border-radius:8px;font-size:16px;font-weight:750;text-decoration:none;white-space:nowrap}
 .download:hover{background:#d5ffc7;color:#142319}
-.build-metadata{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px;margin-top:52px;padding-top:36px;border-top:1px solid #3a5047}
+.build-metadata{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:52px;padding-top:36px;border-top:1px solid #3a5047}
 .metadata{margin:0;line-height:1.7;min-width:0}
 .metadata>div+div{margin-top:18px}
 .metadata dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b7e8ac}
