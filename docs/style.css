@@ -22,7 +22,7 @@ h1 em{font-style:normal;color:#b9eeaa}
 .platform-download{display:flex;align-items:center;gap:14px;min-width:0}
 .platform-logo{display:block;flex:0 0 auto;width:34px;height:34px;filter:invert(93%) sepia(15%) saturate(617%) hue-rotate(54deg) brightness(102%) contrast(94%)}
 .platform-mark{display:grid;place-items:center;flex:0 0 auto;width:34px;height:34px;border:2px solid #c6efb8;border-radius:4px;color:#c6efb8;font-size:11px;font-weight:800;letter-spacing:.02em}
-.download{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;flex:1;padding:13px 16px;background:#b9eeaa;color:#142319;border-radius:8px;font-size:16px;font-weight:750;text-decoration:none;white-space:nowrap}
+.download{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;flex:1;padding:13px 16px;background:#b9eeaa;color:#142319;border-radius:8px;font-size:16px;font-weight:750;text-decoration:none}
 .download:hover{background:#d5ffc7;color:#142319}
 .build-metadata{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:52px;padding-top:36px;border-top:1px solid #3a5047}
 .metadata{margin:0;line-height:1.7;min-width:0}
@@ -31,6 +31,8 @@ h1 em{font-style:normal;color:#b9eeaa}
 .metadata dd{margin:6px 0 0;overflow-wrap:anywhere}
 footer{border-top:1px solid #3a5047;padding:28px 0 40px;display:flex;justify-content:space-between;gap:24px;color:#b9c8bb;font-size:13px;line-height:1.5}
 footer a{color:#e7f5dd}
+/* Three download columns leave at most 163px for a label and its arrow, so labels wrap. Above 900px each column still fits "Download for" plus the arrow (about 134px in wide fallback fonts). */
+@media(max-width:900px){.availability{grid-template-columns:1fr}}
 @media(max-width:700px){
 .shell{padding:0 22px}
 .topbar{justify-content:flex-start;padding:22px 0}
@@ -44,7 +46,7 @@ h1{font-size:clamp(43px,10vw,65px)}
 .availability{width:100%;padding:18px;gap:18px}
 .platform-download{gap:12px}
 .platform-logo{width:32px;height:32px}
-.download{padding:13px;white-space:normal}
+.download{padding:13px}
 .build-metadata{gap:30px}
 .metadata code{word-break:break-all}
 footer{flex-direction:column;gap:10px}
