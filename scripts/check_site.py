@@ -35,14 +35,14 @@ mac_tag = "macos-arm64-156.0.8073.0-7d5d1bfc"
 mac_asset = "pubky-chromium-156.0.8073.0-macos-arm64-7d5d1bfc.zip"
 linux_tag = "pubky-linux-156.0.8073.0-2"
 linux_asset = "chromium-browser-stable_156.0.8073.0-2_amd64.deb"
-windows_tag = "pubky-windows-156.0.8073.0-x64"
-windows_asset = "pubky-chromium-156.0.8073.0-windows-x64-mini-installer.exe"
+windows_tag = "pubky-156.0.8073.1"
+windows_asset = "pubky-chromium-156.0.8073.1-windows-x64-mini-installer.exe"
 assert f"{repo}/releases/download/{mac_tag}/{mac_asset}" in references.links
 assert f"{repo}/releases/download/{linux_tag}/{linux_asset}" in references.links
 assert f"{repo}/releases/download/{windows_tag}/{windows_asset}" in references.links
 assert f"{repo}/commit/7d5d1bfcacdd116fa4c361d4fd05b7a58b783a59" in references.links
 assert f"{repo}/commit/75aa260a8587931879477a6f2b99dcd2301c5e42" in references.links
-assert f"{repo}/commit/b9ec2601f462f6a6bd523887a38c7eedf5949339" in references.links
+assert f"{repo}/commit/50721a8b9692dd2736ab42a8d6c2e9b51f08847b" in references.links
 assert re.search(r'<code id="mac-sha256">[a-f0-9]{64}</code>', page)
 assert re.search(r'<code id="linux-sha256">[a-f0-9]{64}</code>', page)
 assert re.search(r'<code id="windows-sha256">[a-f0-9]{64}</code>', page)
