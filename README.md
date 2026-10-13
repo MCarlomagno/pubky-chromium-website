@@ -6,7 +6,7 @@ Run `python3 scripts/check_site.py`, then preview with `python3 -m http.server 8
 
 For each future release, validate the package, publish the browser asset and checksum, then fetch the published asset and verify its digest before changing the download link. Update the page and the release contract in `scripts/check_site.py` together.
 
-The Pubky wordmark at `docs/assets/pubky-logo.svg` was copied from https://pubky.org/images/pubky-logo.svg with permission for this browser project.
+The Pubky wordmark at `docs/assets/pubky-logo.svg` is the unmodified color-on-black SVG from Synonym's Pubky brand package, used with permission for this browser project. The dark new-tab screenshot is from [browser PR #40](https://github.com/MCarlomagno/pubky-chromium/pull/40#issuecomment-6128479929).
 
 GitHub Actions publishes `main`'s `docs/` to [the main site](https://mcarlomagno.github.io/pubky-chromium-website/) and each open same-repository PR to `/pr-N/` (for example, [PR #1](https://mcarlomagno.github.io/pubky-chromium-website/pr-1/)). Opening, updating, reopening or closing a PR rebuilds the deployment; closed previews disappear. A push to `main` publishes production. Until the first site merge, the root lists the available previews. Draft PRs also get previews; forked PRs run checks without deployment permissions.
 

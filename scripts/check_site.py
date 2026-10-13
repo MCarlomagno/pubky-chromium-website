@@ -33,12 +33,10 @@ references.feed(page)
 repo = "https://github.com/MCarlomagno/pubky-chromium"
 mac_tag = "pubky-macos-156.0.8073.3"
 mac_asset = "pubky-chromium-156.0.8073.3-macos-arm64.zip"
-linux_tag = "pubky-linux-156.0.8073.2"
-linux_asset = "pubky-chromium_156.0.8073.2-1_amd64.deb"
 windows_tag = "pubky-156.0.8073.1"
 windows_asset = "pubky-chromium-156.0.8073.1-windows-x64-mini-installer.exe"
 assert f"{repo}/releases/download/{mac_tag}/{mac_asset}" in references.links
-assert f"{repo}/releases/download/{linux_tag}/{linux_asset}" in references.links
+assert f"{repo}/releases/download/pubky-linux-${{version}}/pubky-chromium_${{version}}-1_amd64.deb" in page
 assert f"{repo}/releases/download/{windows_tag}/{windows_asset}" in references.links
 assert f"{repo}/commit/e8c5d30f605f322b1f4688e1f2cb42d54ddc305b" in references.links
 assert f"{repo}/commit/c1136b720ca25952fa1e2d4eef545b1575163a6b" in references.links
@@ -51,7 +49,14 @@ assert "Browser for the free internet" in page
 assert "Censorship resistant" in page and "A familiar browser." not in page
 assert "Try the experimental Mac build" not in page
 assert "Before you install" not in page and "Install a separate test copy" not in page
-assert page.count('class="download"') == 3
+assert page.count('class="download"') == 2
+assert page.count("version=156.0.8073.2") == 1
+assert f"{repo}/releases/download/pubky-linux-${{version}}/SHA256SUMS.txt" in page
+assert "sha256sum -c SHA256SUMS.txt --ignore-missing" in page
+assert 'sudo apt install "./pubky-chromium_${version}-1_amd64.deb"' in page
+assert "Unknown publisher" in page and "terminal install avoids it" in page
+assert "Not notarized yet" in page and "Privacy &amp; Security" in page
+assert 'src="assets/pubky-newtab-dark.png"' in page
 assert references.images and all(not urlsplit(ref).scheme for ref in references.images)
 for ref in references.links + references.images:
     url = urlsplit(ref)

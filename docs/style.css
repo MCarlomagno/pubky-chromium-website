@@ -1,38 +1,50 @@
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f2f4ed;background:#101b1a;font-synthesis:none}
+:root{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#FFFFFF;background:#05050A;font-synthesis:none}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 70% 20%,#203c32 0%,#101b1a 50%);min-height:100vh}
+body{margin:0;background:#05050A;min-height:100vh}
 a{color:inherit;text-underline-offset:4px}
-a:hover{color:#bcf4ac}
-a:focus-visible{outline:3px solid #bdff7f;outline-offset:5px;border-radius:3px}
+a:hover{color:#C8FF00}
+a:focus-visible{outline:3px solid #C8FF00;outline-offset:5px;border-radius:3px}
 .shell{max-width:1200px;margin:auto;padding:0 clamp(24px,6vw,80px)}
-.topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:31px 0;border-bottom:1px solid #3a5047}
+.topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:31px 0;border-bottom:1px solid #44454A}
 .brand{display:flex;align-items:center;gap:17px;text-decoration:none}
 .brand img{display:block;width:121px;height:40px}
-.brand-label{border-left:1px solid #7d9988;padding-left:17px;font-size:15px;letter-spacing:.02em}
+.brand-label{border-left:1px solid #BFC0C4;padding-left:17px;font-size:15px;letter-spacing:.02em}
 .source,footer a{font-size:14px;font-weight:650;white-space:nowrap}
 .source{margin-left:auto}
 .hero{padding:clamp(72px,11vw,150px) 0 clamp(92px,11vw,140px);max-width:850px}
-.eyebrow{font-size:12px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:#b7e8ac}
+.eyebrow{font-size:12px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:#C8FF00}
 .eyebrow{display:flex;align-items:center;gap:10px}
-.dot{width:9px;height:9px;border-radius:50%;background:#aff073;box-shadow:0 0 15px #aff073}
+.dot{width:9px;height:9px;border-radius:50%;background:#C8FF00}
 h1{font-size:clamp(48px,7.2vw,92px);line-height:1.07;letter-spacing:-.055em;font-weight:680;margin:28px 0}
-h1 em{font-style:normal;color:#b9eeaa}
-.intro{max-width:620px;color:#ced8cf;font-size:clamp(17px,2vw,20px);line-height:1.65}
-.availability{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px;padding:22px;max-width:850px;border:1px solid #65916b;border-radius:15px;background:#203429}
-.platform-download{display:flex;align-items:center;gap:14px;min-width:0}
-.platform-logo{display:block;flex:0 0 auto;width:34px;height:34px;filter:invert(93%) sepia(15%) saturate(617%) hue-rotate(54deg) brightness(102%) contrast(94%)}
-.platform-mark{display:grid;place-items:center;flex:0 0 auto;width:34px;height:34px;border:2px solid #c6efb8;border-radius:4px;color:#c6efb8;font-size:11px;font-weight:800;letter-spacing:.02em}
-.download{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;flex:1;padding:13px 16px;background:#b9eeaa;color:#142319;border-radius:8px;font-size:16px;font-weight:750;text-decoration:none}
-.download:hover{background:#d5ffc7;color:#142319}
-.build-metadata{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:52px;padding-top:36px;border-top:1px solid #3a5047}
+h1 em{font-style:normal;color:#C8FF00}
+.intro{max-width:620px;color:#BFC0C4;font-size:clamp(17px,2vw,20px);line-height:1.65}
+.availability{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:44px;padding:22px;max-width:850px;border:1px solid #44454A;border-radius:15px;background:#202126}
+.platform-download{display:grid;grid-template-columns:34px minmax(0,1fr);align-content:start;align-items:center;gap:10px 14px;min-width:0}
+.platform-download:nth-child(2){grid-column:1/-1;grid-row:2}
+.platform-logo{display:block;width:34px;height:34px;filter:brightness(0) invert(1)}
+.platform-mark{display:grid;place-items:center;width:34px;height:34px;border:2px solid #C8FF00;border-radius:4px;color:#C8FF00;font-size:11px;font-weight:800;letter-spacing:.02em}
+.download{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;padding:13px 16px;background:#C8FF00;color:#05050A;border-radius:8px;font-size:16px;font-weight:750;text-decoration:none}
+.download:hover{background:#FFFFFF;color:#05050A}
+.download:focus-visible{outline-color:#FFFFFF}
+.install-commands{grid-column:1/-1;min-width:0}
+.install-commands pre{margin:10px 0 0;padding:16px;overflow-x:auto;border-radius:8px;background:#05050A;color:#FFFFFF;font-size:13px;line-height:1.6}
+.copy-install{padding:8px 12px;border:1px solid #C8FF00;border-radius:6px;background:#05050A;color:#C8FF00;font:inherit;cursor:pointer}
+.copy-install:hover{background:#44454A}
+.copy-install:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+.copy-status{margin-left:10px;color:#BFC0C4;font-size:13px}
+.install-note{grid-column:1/-1;margin:0;color:#BFC0C4;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.install-note a{color:#FFFFFF}
+.start-page{margin:52px 0 0}
+.start-page img{display:block;width:100%;height:auto;border:1px solid #44454A;border-radius:8px}
+.start-page figcaption{margin-top:12px;color:#BFC0C4;font-size:13px;line-height:1.5}
+.build-metadata{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:52px;padding-top:36px;border-top:1px solid #44454A}
 .metadata{margin:0;line-height:1.7;min-width:0}
 .metadata>div+div{margin-top:18px}
-.metadata dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b7e8ac}
+.metadata dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#C8FF00}
 .metadata dd{margin:6px 0 0;overflow-wrap:anywhere}
-footer{border-top:1px solid #3a5047;padding:28px 0 40px;display:flex;justify-content:space-between;gap:24px;color:#b9c8bb;font-size:13px;line-height:1.5}
-footer a{color:#e7f5dd}
-/* Three download columns leave at most 163px for a label and its arrow, so labels wrap. Above 900px each column still fits "Download for" plus the arrow (about 134px in wide fallback fonts). */
-@media(max-width:900px){.availability{grid-template-columns:1fr}}
+footer{border-top:1px solid #44454A;padding:28px 0 40px;display:flex;justify-content:space-between;gap:24px;color:#BFC0C4;font-size:13px;line-height:1.5}
+footer a{color:#FFFFFF}
+@media(max-width:900px){.availability{grid-template-columns:1fr}.platform-download:nth-child(2){grid-column:auto;grid-row:auto}}
 @media(max-width:700px){
 .shell{padding:0 22px}
 .topbar{justify-content:flex-start;padding:22px 0}
