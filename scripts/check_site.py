@@ -39,7 +39,7 @@ assert f"{repo}/releases/download/{mac_tag}/{mac_asset}" in references.links
 assert f"{repo}/releases/download/pubky-linux-${{version}}/pubky-chromium_${{version}}-1_amd64.deb" in page
 assert f"{repo}/releases/download/{windows_tag}/{windows_asset}" in references.links
 assert f"{repo}/commit/e8c5d30f605f322b1f4688e1f2cb42d54ddc305b" in references.links
-assert f"{repo}/commit/c1136b720ca25952fa1e2d4eef545b1575163a6b" in references.links
+assert f"{repo}/commit/b6b0e28f4011de903358fbe8f5ea7627f82a2a48" in references.links
 assert f"{repo}/commit/50721a8b9692dd2736ab42a8d6c2e9b51f08847b" in references.links
 assert re.search(r'<code id="mac-sha256">[a-f0-9]{64}</code>', page)
 assert re.search(r'<code id="linux-sha256">[a-f0-9]{64}</code>', page)
@@ -50,7 +50,7 @@ assert "Censorship resistant" in page and "A familiar browser." not in page
 assert "Try the experimental Mac build" not in page
 assert "Before you install" not in page and "Install a separate test copy" not in page
 assert page.count('class="download"') == 2
-assert page.count("version=156.0.8073.2") == 1
+assert page.count("version=156.0.8073.4") == 1
 assert f"{repo}/releases/download/pubky-linux-${{version}}/SHA256SUMS.txt" in page
 assert "sha256sum -c SHA256SUMS.txt --ignore-missing" in page
 assert 'sudo apt install "./pubky-chromium_${version}-1_amd64.deb"' in page
