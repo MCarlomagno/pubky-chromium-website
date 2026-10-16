@@ -23,16 +23,31 @@
           <div class="platform-download">
             <img class="platform-logo" src="assets/apple.svg" alt="Apple" width="34" height="34">
             <a class="download" href="https://github.com/MCarlomagno/pubky-chromium/releases/download/pubky-macos-156.0.8073.3/pubky-chromium-156.0.8073.3-macos-arm64.zip">Download for Mac <span aria-hidden="true">↓</span></a>
+            <p class="install-note">Not notarized yet. After the first launch warning, open it from Settings &gt; Privacy &amp; Security.</p>
           </div>
           <div class="platform-download">
             <img class="platform-logo" src="assets/linux.svg" alt="Linux" width="34" height="34">
-            <a class="download" href="https://github.com/MCarlomagno/pubky-chromium/releases/download/pubky-linux-156.0.8073.2/pubky-chromium_156.0.8073.2-1_amd64.deb">Download for Linux <span aria-hidden="true">↓</span></a>
+            <strong>Install on Debian/Ubuntu</strong>
+            <div class="install-commands">
+              <button class="copy-install" type="button" aria-label="Copy Linux install commands">Copy commands</button>
+              <pre><code id="linux-install">version=156.0.8073.2
+wget "https://github.com/MCarlomagno/pubky-chromium/releases/download/pubky-linux-${version}/pubky-chromium_${version}-1_amd64.deb"
+wget "https://github.com/MCarlomagno/pubky-chromium/releases/download/pubky-linux-${version}/SHA256SUMS.txt"
+sha256sum -c SHA256SUMS.txt --ignore-missing
+sudo apt install "./pubky-chromium_${version}-1_amd64.deb"</code></pre>
+              <span class="copy-status" role="status" aria-live="polite"></span>
+            </div>
+            <p class="install-note">Ubuntu App Center shows a generic “Unknown publisher” warning for any local .deb; terminal install avoids it.</p>
           </div>
           <div class="platform-download">
             <span class="platform-mark" aria-hidden="true">Win</span>
             <a class="download" href="https://github.com/MCarlomagno/pubky-chromium/releases/download/pubky-156.0.8073.1/pubky-chromium-156.0.8073.1-windows-x64-mini-installer.exe">Download for Windows <span aria-hidden="true">↓</span></a>
           </div>
         </div>
+        <figure class="start-page">
+          <img src="assets/pubky-newtab-dark.png" alt="Pubky Chromium new tab page in dark mode, showing six ecosystem links" width="1280" height="800">
+          <figcaption>Pubky Chromium's new tab page (dark mode). Screenshot from <a href="https://github.com/MCarlomagno/pubky-chromium/pull/40#issuecomment-6128479929">PR #40</a>.</figcaption>
+        </figure>
         <div class="build-metadata">
           <dl class="metadata" aria-label="Mac release metadata">
             <div><dt>Mac source revision</dt><dd><a href="https://github.com/MCarlomagno/pubky-chromium/commit/e8c5d30f605f322b1f4688e1f2cb42d54ddc305b"><code>e8c5d30f605f322b1f4688e1f2cb42d54ddc305b</code></a></dd></div>
@@ -51,5 +66,6 @@
     </main>
     <footer><span>Pubky artwork used with permission. Independent experimental browser build; not endorsed by Google.</span><a href="https://github.com/MCarlomagno/pubky-chromium">View source <span aria-hidden="true">↗</span></a></footer>
   </div>
+  <script src="assets/copy-install.js" defer></script>
 </body>
 </html>
