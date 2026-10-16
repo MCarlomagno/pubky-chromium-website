@@ -33,14 +33,14 @@ references.feed(page)
 repo = "https://github.com/MCarlomagno/pubky-chromium"
 mac_tag = "pubky-macos-156.0.8073.3"
 mac_asset = "pubky-chromium-156.0.8073.3-macos-arm64.zip"
-windows_tag = "pubky-156.0.8073.1"
-windows_asset = "pubky-chromium-156.0.8073.1-windows-x64-mini-installer.exe"
+windows_tag = "pubky-windows-156.0.8073.4"
+windows_asset = "pubky-chromium-156.0.8073.4-windows-x64-mini-installer.exe"
 assert f"{repo}/releases/download/{mac_tag}/{mac_asset}" in references.links
 assert f"{repo}/releases/download/pubky-linux-${{version}}/pubky-chromium_${{version}}-1_amd64.deb" in page
 assert f"{repo}/releases/download/{windows_tag}/{windows_asset}" in references.links
 assert f"{repo}/commit/e8c5d30f605f322b1f4688e1f2cb42d54ddc305b" in references.links
 assert f"{repo}/commit/b6b0e28f4011de903358fbe8f5ea7627f82a2a48" in references.links
-assert f"{repo}/commit/50721a8b9692dd2736ab42a8d6c2e9b51f08847b" in references.links
+assert f"{repo}/commit/b6b0e28f4011de903358fbe8f5ea7627f82a2a48" in references.links
 assert re.search(r'<code id="mac-sha256">[a-f0-9]{64}</code>', page)
 assert re.search(r'<code id="linux-sha256">[a-f0-9]{64}</code>', page)
 assert re.search(r'<code id="windows-sha256">[a-f0-9]{64}</code>', page)
