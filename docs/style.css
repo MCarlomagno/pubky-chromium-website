@@ -34,9 +34,6 @@ h1 em{font-style:normal;color:#C8FF00}
 .copy-status{margin-left:10px;color:#BFC0C4;font-size:13px}
 .install-note{grid-column:1/-1;margin:0;color:#BFC0C4;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
 .install-note a{color:#FFFFFF}
-.start-page{margin:52px 0 0}
-.start-page img{display:block;width:100%;height:auto;border:1px solid #44454A;border-radius:8px}
-.start-page figcaption{margin-top:12px;color:#BFC0C4;font-size:13px;line-height:1.5}
 .build-metadata{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:52px;padding-top:36px;border-top:1px solid #44454A}
 .metadata{margin:0;line-height:1.7;min-width:0}
 .metadata>div+div{margin-top:18px}

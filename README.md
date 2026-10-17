@@ -6,9 +6,9 @@ Run `python3 scripts/check_site.py`, then preview with `python3 -m http.server 8
 
 For each future release, validate the package, publish the browser asset and checksum, then fetch the published asset and verify its digest before changing the download link. Update the page and the release contract in `scripts/check_site.py` together.
 
-The Pubky wordmark at `docs/assets/pubky-logo.svg` is the unmodified color-on-black SVG from Synonym's Pubky brand package, used with permission for this browser project. The dark new-tab screenshot is from [browser PR #40](https://github.com/MCarlomagno/pubky-chromium/pull/40#issuecomment-6128479929).
+The Pubky wordmark at `docs/assets/pubky-logo.svg` is the unmodified color-on-black SVG from Synonym's Pubky brand package, used with permission for this browser project.
 
-GitHub Actions publishes `main`'s `docs/` to [the main site](https://mcarlomagno.github.io/pubky-chromium-website/) and each open same-repository PR to `/pr-N/` (for example, [PR #1](https://mcarlomagno.github.io/pubky-chromium-website/pr-1/)). Opening, updating, reopening or closing a PR rebuilds the deployment; closed previews disappear. A push to `main` publishes production. Until the first site merge, the root lists the available previews. Draft PRs also get previews; forked PRs run checks without deployment permissions.
+GitHub Actions publishes `main`'s `docs/` to [the main site](https://pubky.github.io/pubky-chromium-website/) and each open same-repository PR to `/pr-N/` (for example, [PR #1](https://pubky.github.io/pubky-chromium-website/pr-1/)). Opening, updating, reopening or closing a PR rebuilds the deployment; closed previews disappear. A push to `main` publishes production. Until the first site merge, the root lists the available previews. Draft PRs also get previews; forked PRs run checks without deployment permissions.
 
 The Pages workflow uses GitHub's official artifact/deployment actions, a read-only assembly job, and a separate job with Pages/OIDC permissions. It reads regular files from `docs/` in pinned Git commits without running scripts from those commits. Production and previews are assembled fresh together, avoiding lost previews or a PR replacing production. `deployment.json` records their revisions. Run `python3 -m unittest discover -s scripts -p 'test_*.py'` to check assembly behavior.
 
