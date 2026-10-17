@@ -30,7 +30,7 @@ class References(HTMLParser):
 page = (ROOT / "index.html").read_text()
 references = References()
 references.feed(page)
-repo = "https://github.com/MCarlomagno/pubky-chromium"
+repo = "https://github.com/pubky/pubky-chromium"
 mac_tag = "pubky-macos-156.0.8073.3"
 mac_asset = "pubky-chromium-156.0.8073.3-macos-arm64.zip"
 windows_tag = "pubky-156.0.8073.1"
@@ -56,7 +56,8 @@ assert "sha256sum -c SHA256SUMS.txt --ignore-missing" in page
 assert 'sudo apt install "./pubky-chromium_${version}-1_amd64.deb"' in page
 assert "Unknown publisher" in page and "terminal install avoids it" in page
 assert "Not notarized yet" in page and "Privacy &amp; Security" in page
-assert 'src="assets/pubky-newtab-dark.png"' in page
+assert "pubky-newtab-dark.png" not in page and not (ROOT / "assets" / "pubky-newtab-dark.png").exists()
+assert "github.com/MCarlomagno" not in page
 assert references.images and all(not urlsplit(ref).scheme for ref in references.images)
 for ref in references.links + references.images:
     url = urlsplit(ref)

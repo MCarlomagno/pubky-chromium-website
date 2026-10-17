@@ -1,7 +1,7 @@
 # Pubky Chromium download website
 
-Repository: https://github.com/MCarlomagno/pubky-chromium-website
-Browser source: https://github.com/MCarlomagno/pubky-chromium
+Repository: https://github.com/pubky/pubky-chromium-website
+Browser source: https://github.com/pubky/pubky-chromium
 
 This repository contains the Pubky Chromium download page for macOS on Apple Silicon, Ubuntu Linux x86_64 and Windows x64. Use plain HTML/CSS and local artwork. Keep distributable packages in browser-repository prereleases; do not commit binaries here.
 
